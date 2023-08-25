@@ -40,7 +40,7 @@ namespace TicTacToeServerSide
         private static void SetupServer()
         {
             Console.WriteLine("Setting up server  . . .");
-            serverSocket.Bind(new IPEndPoint(IPAddress.Parse("10.1.18.2"), PORT));
+            serverSocket.Bind(new IPEndPoint(IPAddress.Parse("10.2.27.9"), PORT));
             serverSocket.Listen(2);
             while (true)
             {
@@ -83,7 +83,8 @@ namespace TicTacToeServerSide
 
             if (clientSockets.Count == 2)
             {
-                MessageBox.Show()
+                byte[] data1 = Encoding.ASCII.GetBytes("\t");
+                socket.Send(data1);
             };
 
         }
